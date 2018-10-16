@@ -125,22 +125,8 @@ public class Booking {
     }
 
     public void addServiceCharge(ServiceType serviceType, double cosst) {
-
-        if (null != state) {
-            switch (state) {
-                case CHECKED_OUT:
-                    System.out.println("The guest has already checked out.");
-                    break;
-                case PENDING:
-                    System.out.println("The guest has not yet checked in.");
-                    break;
-                case CHECKED_IN:
-                    charges.add(new ServiceCharge(serviceType, cosst));
-                    break;
-                default:
-                    break;
-            }
-        }
+        //Changed the parameter cost to cosst
+        charges.add(new ServiceCharge(serviceType, cosst));
 
     }
 
