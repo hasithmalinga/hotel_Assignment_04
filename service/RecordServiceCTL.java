@@ -40,7 +40,10 @@ public class RecordServiceCTL {
 		if (booking == null) {
 			String mesg = String.format("No active booking for room id: %d", roomNumber);
 			recordServiceUI.displayMessage(mesg);
-		}
+		}else if(booking.isCheckedOut()){ //check whether the guest has already checked out from the room
+                        String mesg = String.format("The guest has already checked out from room %d", roomNumber);
+			recordServiceUI.displayMessage(mesg);
+                }
 		else {
 			this.roomNumber = roomNumber;
 			state = State.SERVICE;
